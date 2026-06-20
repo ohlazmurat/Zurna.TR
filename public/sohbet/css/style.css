@@ -1,0 +1,1905 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+:root {
+/* body ve gece renkler*/
+--body: #F3F5F9;
+--bodygece: #333646;
+--bodygececolor: #F3F5F9;
+--bodygecebildirim: #4b4b4b;
+/* tema renkleri*/
+--kenarrenk: #1D1E2C;
+--arkaplan: rgb(240,247,255);
+--mobilarkaplan: rgb(240,247,255);
+--nickler: rgb(240,247,255);
+--scrollwidth: 5px;
+/* yetkili renkleir*/
+--founder: #de335d;
+--sop: #f57c51;
+--op: #3a80a3;
+--halfop:#5ab981;
+--voice: #f7be5b;
+--user: #555555;
+
+/* tema renk2 */
+--renk2body: #c81409;
+--renk2arkaplan: #fff6f5;
+--renk2nickler: #ffe0de;
+/* tema renk3 */
+--renk3body: #FF914D;
+--renk3arkaplan: #fffcf3;
+--renk3nickler: #ffe0de;
+/* tema renk3 */
+--renk4body: #8C52FF;
+--renk4arkaplan: #e1d2ff;
+--renk4nickler: #cbb2fd;
+/* tema renk3 */
+--renk5body: #01502a;
+--renk5arkaplan: #d4f6e6;
+--renk5nickler: #68ffb6;
+}
+
+
+body {
+	margin: 0;
+	padding: 0;
+	font-family: 'Poppins', sans-serif;
+	background: #eaeaec;
+	font-size: 14px;
+}
+
+.acilis {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: #cfcfd1;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: 4;
+}
+
+.acilis .baglanti {
+	width: 300px;
+	height: auto;
+	background-color: #1d1e2c;
+	color: #fff;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 10px 70px 60px;
+	border-radius: 10px;
+}
+.acilis .baglanti .logo {
+	    width: 300px;
+    border-radius: 20px;
+    padding: 10px;
+}
+
+.acilis .bilgiler {
+	display: inline-block;
+	overflow: hidden;
+	animation: zoomFromCenter 0.5s ease-out forwards;
+	transform-origin: center;
+	margin-top: 20px;
+	width: 360px;
+}
+
+@keyframes zoomFromCenter {
+	0% {
+		transform: scale(0);
+		opacity: 0;
+	}
+	100% {
+		transform: scale(1);
+		opacity: 1;
+	}
+}
+.acilis .basliktitle {
+	margin: 0;
+	font-size: 19px;
+	border-bottom: 1px solid silver;
+	padding-bottom: 20px;
+	font-weight: bold;
+}
+.acilis .acilistitle {
+	font-size: 19px;
+}
+.acilis .bilgiler div {
+	background: white;
+	border-radius: 10px;
+	border: 1px solid #b0b0b0;
+	padding: 10px 10px 0 10px;
+	margin: 10px 0;
+}
+.acilis .bilgiler div i {
+	color: #16a085;
+	font-size: 27px;
+	border-right: 1px solid #b0b0b0;
+	padding-right: 10px;
+}
+.acilis .bilgiler input {
+	outline: none;
+	width: 70%;
+	padding: 10px;
+	margin-bottom: 10px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	border: none;
+	font-size: 15px;
+}
+
+
+.acilis .bilgiler button {
+	padding: 10px 16px;
+	background-color: #2c84a5;
+	color: white;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+	width: 100%;
+	font-size: 20px;
+	font-weight: bold;
+	margin-top: 10px;
+}
+.acilis .bilgiler button:hover {
+	opacity: 0.7;
+}
+
+.header {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 200px;
+	height: 50px;
+	background: var(--kenarrenk);
+	color: #4a97b4;
+	padding: 0 6px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.header .header-row {
+	padding: 10px;
+	box-sizing: border-box;
+}
+
+.header .qbi-auto {
+	width: auto;
+}
+.header .mobilmenulist {
+	display: none;
+}
+.header .aktifnick, .header .aktifekran {
+	width: 12%;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	color: #fff;
+}
+.header .head {
+	padding: 10px 5px;
+	background: #4a97b4;
+	color: #fff;
+	border: none;
+	font-size: 15px;
+	border-radius: 2px;
+}
+.header .temalar {
+	padding: 10px;
+	background: var(--arkaplan);
+	border-radius: 9px;
+}
+.header .temalar [class^="renk"] {
+	cursor: pointer;
+}
+.header .temalar [class^="renk"] i:hover {
+	opacity: 0.6;
+}
+.header .fa-sliders {
+	font-size: 19px;
+	border-right: 1px solid silver;
+	padding: 15px 10px;
+}
+.header .renk1 {
+	background: var(--kenarrenk);
+	padding: 5px 10px;
+	border-radius: 30px;
+	font-size: 20px;
+	color: white;
+}
+.header .renk2 {
+	background: var(--renk2body);
+	padding: 5px 10px;
+	border-radius: 30px;
+	font-size: 20px;
+	color: white;
+}
+.header .renk3 {
+	background: var(--renk3body);
+	padding: 5px 10px;
+	border-radius: 30px;
+	font-size: 20px;
+	color: white;
+}
+.header .renk4 {
+	background: var(--renk4body);
+	padding: 5px 10px;
+	border-radius: 30px;
+	font-size: 20px;
+	color: white;
+}
+.header .renk5 {
+	background: var(--renk5body);
+	padding: 5px 10px;
+	border-radius: 30px;
+	font-size: 20px;
+	color: white;
+}
+.temaaktif::before {
+	content: "\f00c";
+	font-family: 'FontAwesome';
+	font-size: 24px;
+	color: white;
+	position: absolute;
+	transform: translate(-50%, -50%);
+	margin-left: 10px;
+	margin-top: 10px;
+}
+.nickler ul::-webkit-scrollbar {
+	width: var(--scrollwidth);
+}
+
+.nickler ul::-webkit-scrollbar-thumb {
+	background: var(--kenarrenk);
+	color: var(--kenarrenk);
+	border-radius: 10px;
+}
+.nickler {
+	display: none;
+	position: absolute;
+	color: white;
+	width: 200px;
+	height: 550px;
+	right: 200px;
+	top: 51px;
+	margin: 0 5px;
+	font-family: 'Poppins', sans-serif;
+}
+.nickler .nicktara {
+	position: fixed;
+	top: 51px;
+	width: 190px;
+	background: #eaeaec;
+	color: rgb(29 30 44);
+	display: flex;
+	align-items: center;
+	margin: 0 auto;
+	height: 50px;
+	padding: 0 5px;
+}
+
+.nickler .nicktara span {
+	margin-right: 5px;
+}
+
+.nickler .nicktara input[type="text"] {
+	color: var(--arkaplan);
+	width: 100%;
+	box-sizing: border-box;
+	background: transparent;
+	border: none;
+	padding: 10px 0px;
+	padding-left: 5px;
+	outline: 0;
+}
+.nickler ul {
+	position: relative;
+	top: 51px;
+	display: none;
+	background: #fff;
+	width: 97%;
+	height: 100%;
+	overflow: hidden;
+	overflow-y: auto;
+	padding: 0;
+	margin: 0;
+}
+.nickler .nactive {
+	display: block;
+}
+.nickler ul .nick {
+	display: flex;
+	align-items: center;
+	margin: 2px 5px;
+	padding: 4px 0;
+	position: relative;
+	color: var(--user);
+	font-size: 14px;
+	border-bottom: 1px solid #f3f3f3;
+}
+.nickler ul .nickselected {
+	background: #ededed !important;
+}
+.nickler ul .nick .arkaplan {
+	width: 25px;
+	height: 25px;
+	border-radius: 50%;
+	margin-right: 5px;
+	flex-shrink: 0; 
+	background-image: url(../images/user.svg);
+	background-size: 100% auto;
+	background-repeat: no-repeat;
+}
+.nickler ul .nick .isim {
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	font-weight: 500;
+}
+
+.nickler ul .nick.v { color: var(--voice); }
+.nickler ul .arkaplan.v { 
+	background-image: url(../images/voice.svg);
+	background-size: 100% auto;
+	background-repeat: no-repeat;
+}
+
+.nickler ul .nick.h { color: var(--halfop); }
+.nickler ul .arkaplan.h { 
+	background-image: url(../images/halfop.svg);
+	background-size: 100% auto;
+	background-repeat: no-repeat;
+}
+
+.nickler ul .nick.o { color: var(--op); }
+.nickler ul .arkaplan.o { 
+	background-image: url(../images/op.svg);
+	background-size: 100% auto;
+	background-repeat: no-repeat;
+}
+
+.nickler ul .nick.a { color: var(--sop); }
+.nickler ul .arkaplan.a { 
+	background-image: url(../images/sop.svg);
+	background-size: 100% auto;
+	background-repeat: no-repeat;
+}
+
+.nickler ul .nick.q { color: var(--founder); }
+.nickler ul .arkaplan.q { 
+	background-image: url(../images/founder.svg);
+	background-size: 100% auto;
+	background-repeat: no-repeat;
+}
+
+
+.pencereler {
+	position: absolute;
+	background: #eaeaec;
+	color: white;
+	width: 200px;
+	height: 550px;
+	right: 0;
+	top: 50px;
+	border-left: 1px solid black;
+	padding: 0 4px;
+	overflow: auto;
+	font-family: 'Poppins', sans-serif;
+}
+.pencereler .kanallar {
+
+}
+
+.pencereler .kanallar .kanal {
+	background: #fff;
+	color: var(--kenarrenk);
+	font-weight: 400;
+	border-radius: 2px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	border: 1px solid #ccc;
+	padding: 0 7px;
+	margin: 5px 3px;
+	font-size: 14px;
+	cursor: pointer;
+}
+.pencereler .kanallar .yazivar {
+	color: #0c1be2;
+}
+.pencereler .kanallar .kactive {
+	color: var(--arkaplan);
+	background: var(--kenarrenk);
+}
+.pencereler .kanallar .kanal .kanalname {
+	width: calc(100% - 20px); /* İkinci span genişliğini dahil etmeden ilk span genişliği hesaplaması */
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	padding: 7px 0;
+}
+.pencereler .kanallar .kanal .kapat {
+	display: none;
+	cursor: pointer;
+	font-weight: bold;
+}
+
+.pencereler .kanallar .kanal:hover .kapat {
+	display: block;
+}
+
+.pencereler .kanallar > div:first-child {
+	font-weight: 600;
+}
+.pencereler .ozeller .ozel {
+	background: #fff;
+	color: var(--kenarrenk);
+	font-weight: 400;
+	border-radius: 2px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	border: 1px solid #ccc;
+	padding: 0 7px;
+	margin: 5px 3px;
+	font-size: 14px;
+	cursor: pointer;
+}
+.pencereler .ozeller .oactive {
+	color: var(--arkaplan);
+	background: var(--kenarrenk);
+}
+.pencereler .ozeller .ozelname i {
+	padding: 5px;
+}
+.pencereler .ozeller .ozel .yanson {
+	background: #ef0000;
+	color: white;
+	border-radius: 10px;
+	animation: yansin 2s infinite; /* Animasyon adı, süresi ve tekrar sayısı */
+}
+
+@keyframes yansin {
+	0% {
+		opacity: 0.2;
+	}
+	50% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0.2;
+	}
+}
+.pencereler .ozeller .ozel .ozelname {
+	width: calc(100% - 20px); /* İkinci span genişliğini dahil etmeden ilk span genişliği hesaplaması */
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	padding: 7px 0;
+}
+.pencereler .ozeller .ozel .kapat {
+	display: none;
+	cursor: pointer;
+}
+
+.pencereler .ozeller .ozel:hover .kapat {
+	display: block;
+}
+.pencereler::-webkit-scrollbar {
+	width: var(--scrollwidth);
+}
+
+.pencereler::-webkit-scrollbar-thumb {
+	background: var(--arkaplan);
+	color: var(--kenarrenk);
+	border-radius: 10px;
+}
+.pencereler .mobilozeller {
+	display: block;
+	display: flex;
+	padding: 0 10px;
+	border-bottom: 1px solid silver;
+}
+.pencereler .mobilozeller .part1 {
+	flex: 1;
+}
+.pencereler .mobilozeller .part1 p {
+	margin: 0;
+	margin-top: 20px;
+	margin-bottom: 5px;
+}
+.pencereler .mobilozeller .okapat {
+	padding: 0px 5px;
+	border-radius: 5px;
+	margin-right: 10px;
+	cursor: pointer;
+	background: #d9e3f6;
+	color: #948f8f;
+}
+.msg {
+	position: absolute;
+	padding: 0 2px;
+	width: 90px;
+	height: 450px;
+	left: 0;
+	bottom: 80px;
+	top: 52px;
+	font-size: 13px;
+	overflow-y: hidden;
+	background: #fff;
+	color: #393939;
+}
+.msg .msglogo {
+	position: absolute;
+	top: 40px;
+	width: 300px;
+	height: auto;
+	right: 10px;
+	z-index: 2;
+}
+.yazanlar::-webkit-scrollbar {
+	width: 5px;
+}
+
+.yazanlar::-webkit-scrollbar-thumb {
+	color: var(--arkaplan);
+	background: var(--kenarrenk);
+	border-radius: 10px;
+}
+.msg .yazanlar {
+	position: fixed;
+	bottom: 8px;
+	width: auto;
+	height: auto;
+	max-height: 400px;
+	bottom: 100px;
+	right: 440px;
+	padding: 0 2px;
+	border-radius: 5px;
+	max-height: 400px;
+	overflow: auto;
+}
+.msg .yazanlar .yazannick {
+	width: auto;
+	color: var(--kenarrenk);
+	background: #f3f3ff;
+	height: auto;
+	padding: 0 10px;
+	border-radius: 5px;
+	margin: 0;
+	margin-bottom: 5px;
+}
+.msg .yazanlar .yazannick span {
+	display: inline-block;
+	animation: spin 2s linear infinite;
+}
+@keyframes spin {
+	0% { transform: rotate(0deg); }
+	100% { transform: rotate(360deg); }
+}
+.msg .kullanicimenu {
+	display: none;
+	position: fixed;
+	top: 30%;
+	right: 210px;
+	z-index: 2;
+}
+.msg .kullanicimenu .kullaniciackapat {
+	position: absolute;
+	top: -30px;
+	right: 0;
+	background: var(--kenarrenk);
+	color: var(--arkaplan);
+	padding: 5px;
+}
+.msg .kullanicimenu ul {
+	position: absolute;
+	top: 0;
+	right: 0;
+	background: var(--kenarrenk);
+	color: var(--arkaplan);
+	text-align: left;
+	padding: 5px 0px 5px 40px;
+	width: 70px;
+}
+.msg .kullanicimenu .ozelnick {
+	position: absolute;
+	top: -80px;
+	right: -5px;
+	background: var(--kenarrenk);
+	color: var(--arkaplan);
+	padding: 10px;
+}
+.msg .kullanicimenu ul li {
+	list-style: none;
+	margin: 5px;
+	margin-left: -30px;
+	padding: 2px;
+	border-bottom: 1px solid white;
+	cursor: pointer;
+}
+.msg .kullanicimenu ul li:hover {
+	background: silver;
+}
+.msg .nick.v { color: var(--voice); }
+.msg .nick.h { color: var(--halfop); }
+.msg .nick.o { color: var(--op); }
+.msg .nick.a { color: var(--sop); }
+.msg .nick.q { color: var(--founder); }
+.msg .topic {
+	display: none;
+	position: fixed;
+	top: 71px;
+	width: 636px;
+	background: var(--arkaplan);
+	height: 10px;
+	color: var(--kenarrenk);
+	text-align: left;
+	padding: 20px 10px;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+.msg .topicmsg, 
+.msg .topicupdate,
+.msg .mode,
+.msg .newnick,
+.msg .seslenme,
+.msg .kick {
+	background: #d9e3f6;
+	padding: 10px;
+	font-weight: unset;
+	color: #948f8f;
+	margin: 0 !important;
+}
+.msg .kanal .format_span {
+
+}
+.msg .kanal {
+	display: none;
+	position: relative;
+	height: 100%;
+	padding: 0;
+	overflow-y: auto;
+	padding-bottom: 3px;
+}
+.mactive::-webkit-scrollbar {
+	width: 5px;
+}
+
+.mactive::-webkit-scrollbar-thumb {
+	color: var(--arkaplan);
+	background: var(--kenarrenk);
+	border-radius: 10px;
+}
+.msg .kanal .mesaj {
+	margin: 2px 2px;
+	width: auto;
+	overflow: auto;
+}
+.msg .kanal .text {
+	word-wrap: break-word;
+	white-space: pre-wrap;
+	white-space: -moz-pre-wrap;
+	white-space: -pre-wrap;
+	white-space: -o-pre-wrap;
+}
+.msg .kanal .text .emojione {
+	width: 20px;
+	position: relative;
+	top: 2px;
+	margin: 0 2px;
+}
+.msg .kanal .text span {
+	word-wrap: break-word;
+	white-space: pre-wrap;
+	white-space: -moz-pre-wrap;
+	white-space: -pre-wrap;
+	white-space: -o-pre-wrap;
+}
+.msg .kanal .time {
+	margin-right: 5px;
+}
+.msg .kanal .nick {
+	margin-right: 5px;
+}
+.msg .kanal .icon {
+	margin-right: 5px;
+}
+.msg .kanal .notice {
+	color: #974e00;
+	margin: 2px 2px;
+}
+.msg .kanal .action {
+	color: #b100b9;
+	margin: 2px 2px;
+}
+.msg .mactive {
+	display: block;
+}
+.editor {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	height: 100px;
+	padding: 0 2px;
+	background: #fff;
+}
+.editor .mobileditor {
+	display: none;
+}
+.editor .co-ust {
+	display: flex;
+	height: 35px;
+	margin: 5px;
+	align-items: center;
+}
+.editor .yaktive {
+	background: var(--kenarrenk);
+	color: var(--arkaplan);
+}
+.editor .kalinyazi,
+.editor .yanyazi,
+.editor  .altyazi,
+.editor .renkler,
+.editor .temizle,
+.editor .mirc {
+	width: auto;
+	margin-right: 0px;
+	padding: 5px 10px;
+	text-align: center;
+	border-right: 1px solid silver;
+	font-size: 16px;
+	cursor: pointer;
+}
+.editor .kalinyazi:hover,
+.editor .yanyazi:hover,
+.editor .altyazi:hover,
+.editor .renkler:hover,
+.editor .temizle:hover,
+.editor .mirc:hover,
+.editor .yazibuyut:hover,
+.editor .yazikucult:hover,
+.editor .radyo:hover,
+.editor .tamekran:hover {
+	opacity: 0.6; /* Hover durumunda opacity 0.8 yapılıyor */
+}
+.editor .kalinyazi {
+	font-weight: bold;
+}
+.editor .yanyazi {
+	font-style: italic;
+}
+.editor .altyazi {
+	text-decoration: underline;
+}
+.editor .renklist {
+	display: flex;
+	display: none;
+	position: absolute;
+	list-style: none;
+	padding: 0px;
+	bottom: 80px;
+	left: 5px;
+}
+.editor .renklist li {
+	padding: 13px;
+	border: 1px solid #ccc;
+	margin: 0px;
+}
+.editor .renklist li:hover {
+	opacity: 0.6;
+	cursor: pointer;
+}
+
+.editor .renklist .renk1 {background: black;}
+.editor .renklist .renk2 {background: #002d50;}
+.editor .renklist .renk3 {background: #008000;}
+.editor .renklist .renk4 {background: #FF0000;}
+.editor .renklist .renk5 {background: #800040;}
+.editor .renklist .renk6 {background: #800080;}
+.editor .renklist .renk7 {background: #FF8040;}
+.editor .renklist .renk8 {background: #FFFF00;}
+.editor .renklist .renk9 {background: #80FF00;}
+.editor .renklist .renk10 {background: #008080;}
+.editor .renklist .renk11 {background: #00FFFF;}
+.editor .renklist .renk12 {background: #0000FF;}
+.editor .renklist .renk13 {background: #FF55FF;}
+.editor .renklist .renk14 {background: #808080;}
+.editor .renklist .renk15 {background: #C0C0C0;}
+.renklist li.renkaktif::before {
+	content: "\f00c";
+	font-family: 'FontAwesome';
+	font-size: 20px;
+	color: white;
+	position: absolute;
+	transform: translate(-50%, -50%);
+}
+.editor .mirc a {
+	text-decoration: none;
+	color: var(--kenarrenk);
+	font-weight: 500;
+}
+.editor .yazibuyut,
+.editor .yazikucult,
+.editor .radyo,
+.editor .tamekran {
+	padding: 5px 9px;
+	text-align: center;
+	font-size: 16px;
+	cursor: pointer;
+	border-right: 1px solid silver;
+	margin: -2px;
+}
+.sagbar {
+	margin-left: auto; /* Sağa yasla */
+}
+.sagbar .okapatbutton {
+	border-right: 2px solid silver;
+	padding: 15px;
+	text-align: center;
+}
+.editor .co-alt {
+	height: 35px;
+	position: relative;
+}
+.editor .co-alt .co-auto:nth-child(1) {
+	display: none;
+	width: 5%;
+}
+.editor .co-alt .co-auto:nth-child(2) {
+	display: none;
+	width: 5%;
+}
+.editor .co-alt .co-auto:nth-child(3) {
+	width: 90%;
+}
+.editor .co-alt .co-auto:nth-child(4) {
+	text-align: center;
+	width: 10%;
+}
+.editor #inputmsg {
+	width: 100%;
+	border: none;
+	font-size: 20px;
+	color: black;
+}
+.editor #inputgonder {
+	padding: 10px 5px;
+	border: none;
+	background: #4a97b4;
+	color: var(--arkaplan);
+	margin-left: 5px;
+	font-size: 15px;
+}
+.editor .fa-magnifying-glass {
+	padding: 7px 10px;
+	background: var(--arkaplan);
+	color: var(--kenarrenk);
+	font-size: 16px;
+}
+.row {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.emojionearea.emojionearea-inline {
+	border: 1px solid silver !important; 
+	height: 50px !important;
+}
+.emojionearea.emojionearea-inline>.emojionearea-editor {
+	padding: 12px 0px !important;
+	font-size: 18px !important;
+	height: 40px !important;
+}
+.emojionearea.emojionearea-inline>.emojionearea-button {
+	top: 10px !important;
+}
+@keyframes rotate360 {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+.header .fa-spinner {
+	animation: rotate360 2s linear infinite;
+}
+.ayarlarmenu {
+	padding: 20px;
+	width: 300px;
+}
+.ayarlarmenu span {
+	position: absolute;
+	margin-left: 10px;
+}
+.ayarlarmenu .checkbox {
+	display: none;
+}
+
+.ayarlarmenu .checkbox + label {
+	display: inline-block;
+	position: relative;
+	width: 35px;
+	height: 10px;
+	background: linear-gradient(to right, #fd1a15 0, #fc8b34 45%, #7fd03e 55%, #007177 100%) 0 0;
+	background-size: 650px 100%;
+	border-radius: 70px;
+	padding: 7px;
+	cursor: pointer;
+	transition: all 500ms ease;
+	box-shadow: 0 0px 10px rgb(0 0 0 / 20%) inset;
+}
+.ayarlarmenu .checkbox + label:before {
+	content: "Off";
+	width: 20px;
+	height: 20px;
+	position: absolute;
+	left: 3px;
+	top: 2px;
+	border-radius: 100%;
+	background: #fff;
+	text-align: center;
+	line-height: 22px;
+	font-family: "Cabin", sans-serif;
+	font-size: 7px;
+	font-weight: bold;
+	color: #fd1a15;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	transition: left 500ms ease, color 500ms ease, transform 150ms ease;
+}
+.ayarlarmenu .checkbox + label:active:before {
+	transform: scale(0.95);
+}
+
+.ayarlarmenu .checkbox:checked + label {
+	background-position-x: -350px;
+}
+.ayarlarmenu .checkbox:checked + label:before {
+	content: "On";
+	color: #007177;
+	left: 22px;
+}
+.gecemodu {
+	padding: 4px;
+	background: var(--arkaplan);
+	border-radius: 10px;
+}
+.gecemodu #mobilmar { display: none; }
+.gecemodu #mar { display: none; }
+
+
+.gecemodu .checkbox-label { z-index: 0; position: relative;}
+
+.gecemodu .options {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	width: 100px;
+	height: 30px;
+	z-index: -1;
+	position: relative;
+	background-color: var(--arkaplan);	
+}
+.gecemodu .cc_control_button .options .decline, 
+.gecemodu .cc_control_button .options .accept { 
+	width: 50px; 
+	height:30px; 
+	display: flex; 
+	justify-content: center; 
+	align-items: center;
+	cursor: pointer;
+	font-family: 'Open Sans', sans-serif;
+}
+
+.gecemodu .cc_control_button .checkbox-label .checkbox + .options::before {
+	content: "";
+	display: inline-block;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	background-color: var(--kenarrenk);
+	width: 50px;
+	height: 30px;
+	z-index: -1;
+	transition: 0.3s;
+}
+
+.gecemodu .cc_control_button .checkbox-label .checkbox:checked + .options::before {
+	content: "";
+	display: inline-block;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 50px;
+	background-color: var(--kenarrenk);
+	width: 50px;
+	height: 30px;
+	z-index: -1;
+	transition: 0.3s;
+}
+
+.gecemodu .cc_control_button .checkbox-label .checkbox:disabled + .options span { cursor: not-allowed;}
+
+.gecemodu .cc_control_button .checkbox-label .checkbox + .options span:nth-child(1) {
+	color: var(--arkaplan);
+	transition: 0.3s;
+}
+.gecemodu .cc_control_button .checkbox-label .checkbox + .options span:nth-child(2) {
+	color: var(--kenarrenk);
+	transition: 0.3s;
+}
+.gecemodu .cc_control_button .checkbox-label .checkbox:checked + .options span:nth-child(1) {
+	color: var(--kenarrenk);
+	transition: 0.3s;
+}
+.gecemodu  .cc_control_button .checkbox-label .checkbox:checked + .options span:nth-child(2) {
+	color: var(--arkaplan);
+	transition: 0.3s;
+}
+
+.jconfirm-form input {
+	padding: 10px;
+	font-size: 15px;
+	border-radius: 7px;
+	border: none;
+}
+.jconfirm.jconfirm-white .jconfirm-box, .jconfirm.jconfirm-light .jconfirm-box {
+	background: #c9c9cb;
+	color: rgb(37 38 49);
+	border: 1px solid;
+	box-shadow: 0 0 5px 5px #252631;
+}
+
+.whois p {
+	margin: 0;
+}
+.context-menu {
+	position: fixed;
+	top: 72px;
+	right: 440px;
+	background-color: var(--kenarrenk);
+	color: var(--arkaplan);
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	padding: 5px;
+	display: none; 
+	width: 140px;
+	z-index: 3;
+}
+.context-menu .clickrumuz {
+	margin: 0;
+}
+.context-menu ul{
+
+}
+.context-menu ul li {
+	list-style: none;
+	margin-left: -40px;
+	border-bottom: 1px solid #4b4b4b;
+	font-size: 14px;
+	padding: 5px;
+	cursor: pointer;
+	width: 100%;
+}
+.context-menu ul li:hover {
+	background: silver;
+}
+.engellistdiv {
+	overflow-y: auto;
+	width: 300px;
+	max-height: 300px;
+}
+
+.engellistdiv .list-item {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 8px;
+	border-bottom: 1px solid #ccc;
+}
+
+.engellistdiv .list-item span {
+	flex: 1;
+}
+
+.engellistdiv .list-item i {
+	cursor: pointer;
+	color: red;
+}
+
+.engellistdiv .hepsini-kaldir {
+	display: flex;
+	justify-content: flex-end;
+	margin-top: 10px;
+}
+
+.engellistdiv .hepsini-kaldir button {
+	background-color: #d9534f;
+	color: white; 
+	border: none;
+	padding: 5px 10px;
+	cursor: pointer;
+}
+
+.engellistdiv .hepsini-kaldir button:hover {
+	background-color: #c9302c;
+}
+.engellistdiv::-webkit-scrollbar {
+	width: var(--scrollwidth);
+}
+
+.engellistdiv::-webkit-scrollbar-thumb {
+	background: var(--arkaplan);
+	color: var(--kenarrenk);
+	border-radius: 10px;
+}
+.gece {
+	background: var(--bodygece);
+}
+.gece .header {
+	background: var(--bodygece);
+	color: var(--bodygececolor);
+}
+.gece .header .mobilmenulist {
+	background: var(--bodygece);
+	color: var(--bodygececolor);
+}
+.gece .header .mobilgece p {
+	color: var(--bodygece);
+}
+.gece .pencereler {
+	background: var(--bodygece);
+	color: var(--bodygececolor);
+	border-left: 1px solid #616161;
+}
+.gece .msg {
+	background: var(--bodygece);
+	color: var(--bodygececolor);
+}
+.gece .msg .kanal .notice {
+	color: #f39026;
+	margin: 2px 2px;
+}
+.gece .msg .topicmsg, 
+.gece .msg .topicupdate, 
+.gece .msg .mode, 
+.gece .msg .newnick, 
+.gece .msg .seslenme, 
+.gece .msg .kick {
+	background: var(--bodygecebildirim);
+	color: var(--bodygececolor);
+}
+.gece .editor {
+	background: var(--bodygece);
+	color: var(--bodygececolor);
+	border-top: 1px solid #616161;
+}
+.gece .editor .kalinyazi, 
+.gece .editor .yanyazi, 
+.gece .editor .altyazi, 
+.gece .editor .renkler, 
+.gece .editor .temizle, 
+.gece .editor .mirc a,
+.gece .editor .mirc {
+	color: var(--bodygececolor);
+}
+.gece .emojionearea.emojionearea-inline {
+	background: var(--bodygecebildirim);
+}
+.gece .emojionearea-editor {
+	color: var(--bodygececolor);
+}
+.gece .nickler ul {
+	background: #282828;
+	border-left: 1px solid #616161;
+}
+.gece .nickler ul .nick {
+	color: var(--bodygececolor);
+}
+.gece  .nickler ul .nickselected {
+	background: var(--bodygecebildirim);
+	color: var(--bodygece); 
+}
+
+
+/* renk2 */
+.renk2 {
+	background: var(--renk2body);
+}
+.renk2 .header {
+	background: var(--renk2body);
+}
+.renk2 .nickler ul {
+	background: var(--renk2nickler);
+}
+.renk2 .nickler .nicktara {
+	background: var(--renk2body);
+}
+.renk2 .pencereler {
+	background: var(--renk2body);
+}
+.renk2 .pencereler .kanallar .kactive {
+	background: var(--renk2body);
+}
+.renk2 .pencereler .ozeller .oactive {
+	background: var(--renk2body);
+}
+.renk2 .pencereler .mobilozeller .okapat {
+	background: #ffe3e1;
+}
+.renk2 .msg {
+	background: var(--renk2arkaplan);
+}
+.renk2 .msg .kullanicimenu ul {
+	background: var(--renk2body);
+}
+.renk2 .editor {
+	background: var(--renk2arkaplan);
+}
+.renk2 .editor #inputgonder {
+	background: var(--renk2body);
+}
+.renk2 .msg .topicmsg, 
+.renk2 .msg .topicupdate,
+.renk2 .msg .mode,
+.renk2 .msg .newnick,
+.renk2 .msg .seslenme,
+.renk2 .msg .kick {
+	background: #ffe3e1;
+}
+.renk2 .jconfirm.jconfirm-white .jconfirm-box, 
+.renk2 .jconfirm.jconfirm-light .jconfirm-box {
+	background: var(--renk2body);
+}
+/* renk3 */
+.renk3 {
+	background: var(--renk3body);
+}
+.renk3 .nickler ul {
+	background: var(--renk3nickler);
+}
+.renk3 .nickler .nicktara {
+	background: var(--renk3body);
+}
+.renk3 .header {
+	background: var(--renk3body);
+}
+.renk3 .pencereler {
+	background: var(--renk3body);
+}
+.renk3 .pencereler .kanallar .kactive {
+	background: var(--renk3body);
+}
+.renk3 .pencereler .ozeller .oactive {
+	background: var(--renk3body);
+}
+.renk3 .pencereler .mobilozeller .okapat {
+	background: #ffe7d9;
+}
+.renk3 .msg {
+	background: var(--renk3arkaplan);
+}
+.renk3 .msg .kullanicimenu ul {
+	background: var(--renk3body);
+}
+.renk3 .editor {
+	background: var(--renk3arkaplan);
+}
+.renk3 .editor #inputgonder {
+	background: var(--renk3body);
+}
+.renk3 .msg .topicmsg, 
+.renk3 .msg .topicupdate,
+.renk3 .msg .mode,
+.renk3 .msg .newnick,
+.renk3 .msg .seslenme,
+.renk3 .msg .kick {
+	background: #ffe7d9;
+}
+.renk3 .jconfirm.jconfirm-white .jconfirm-box, 
+.renk3 .jconfirm.jconfirm-light .jconfirm-box {
+	background: var(--renk3body);
+}
+/* renk4 */
+.renk4 {
+	background: var(--renk4body);
+}
+.renk4 .header {
+	background: var(--renk4body);
+}
+.renk4 .nickler ul {
+	background: var(--renk4nickler);
+}
+.renk4 .nickler .nicktara {
+	background: var(--renk4body);
+}
+.renk4 .pencereler {
+	background: var(--renk4body);
+}
+.renk4 .pencereler .kanallar .kactive {
+	background: var(--renk4body);
+}
+.renk4 .pencereler .ozeller .oactive {
+	background: var(--renk4body);
+}
+.renk4 .msg {
+	background: var(--renk4arkaplan);
+}
+.renk4 .editor #inputgonder {
+	background: var(--renk4body);
+}
+.renk4 .msg .topicmsg, 
+.renk4 .msg .topicupdate,
+.renk4 .msg .mode,
+.renk4 .msg .newnick,
+.renk4 .msg .seslenme,
+.renk4 .msg .kick {
+	background: var(--renk4nickler);
+}
+.renk4 .jconfirm.jconfirm-white .jconfirm-box, 
+.renk4 .jconfirm.jconfirm-light .jconfirm-box {
+	background: var(--renk4body);
+}
+/* renk5 */
+.renk5 {
+	background: var(--renk5body);
+}
+.renk5 .header {
+	background: var(--renk5body);
+}
+.renk5 .nickler ul {
+	background: var(--renk5nickler);
+}
+.renk5 .nickler .nicktara {
+	background: var(--renk5body);
+}
+.renk5 .pencereler {
+	background: var(--renk5body);
+}
+.renk5 .pencereler .kanallar .kactive {
+	background: var(--renk5body);
+}
+.renk5 .pencereler .ozeller .oactive {
+	background: var(--renk5body);
+}
+.renk5 .msg {
+	background: var(--renk5arkaplan);
+}
+.renk5 .editor #inputgonder {
+	background: var(--renk5body);
+}
+.renk5 .msg .topicmsg, 
+.renk5 .msg .topicupdate,
+.renk5 .msg .mode,
+.renk5 .msg .newnick,
+.renk5 .msg .seslenme,
+.renk5 .msg .kick {
+	background: var(--renk5nickler);
+}
+.renk5 .jconfirm.jconfirm-white .jconfirm-box, 
+.renk5 .jconfirm.jconfirm-light .jconfirm-box {
+	background: var(--renk5body);
+}
+.mobilmenu {
+	display: none;
+}
+.mobilkapat {
+	display: none;
+}
+.mobilkanalinc {
+	display: none;
+}
+.kenarakaydir {
+	display: none;
+}
+.kullaniciackapat {
+	display: none;
+}
+
+@media screen and (max-width:1044px){ 
+	body {
+		background: #fff;
+		font-size: 12px;
+	}
+	.acilis .baglanti {
+		padding: 20px 20px 40px;
+	}
+	.acilis .bilgiler {
+		width: 100%;
+	}
+
+	.header {
+		position: fixed;
+		background: rgb(29 30 44);
+		color: #ffffff;
+		height: 50px;
+		z-index: 3;
+	}
+	.header .header-row {
+		display: none;
+	}
+	.header .mobilmenu {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		width: 100%;
+	}
+	.header .mobilmenu div {
+		text-align: center;
+		font-size: 11px;
+		width: auto;
+	}
+	.header .mobilmenu div i {
+	}
+	.header .mobilmenu .mobilbars {
+		background: var(--kenarrenk);
+		color: var(--arkaplan);
+		width: 10%;
+		padding: 5px 0px;
+		font-size: 23px;
+	}
+	.header .mobilmenu .mobilradyo {
+		padding: 3px 0px;
+		background: var(--kenarrenk);
+		color: var(--arkaplan);
+		width: 12%;
+	}
+	.header .mobilmenu .mobilradyo p {
+		margin: 0;
+		font-size: 10px;
+	}
+	.header .mobilmenu .mobilozel {
+		padding: 11px 0px;
+		background: var(--kenarrenk);
+		color: var(--arkaplan);
+		width: 10%;
+	}
+	.header .mobilmenu .mobilkanallar {
+		padding: 11px 0px;
+		background: var(--kenarrenk);
+		color: var(--arkaplan);
+		width: 30%;
+	}
+	.header .mobilmenu .mobilkactive i {
+		transform: scaleY(-1);
+	}
+	.header .mobilmenu .mobilmesaj {
+		padding: 11px 0px;
+		background: var(--kenarrenk);
+		color: var(--arkaplan);
+		width: 30%;
+	}
+	.header .mobilmenulist {
+		display: none;
+		position: fixed;
+		top: 50px;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: #eee;
+		color: rgb(29 30 44);
+		font-size: 15px;
+	}
+	.header .mobilmenulist ul {
+		text-align: left;
+		padding: 0 10px;
+	}
+	.header .mobilmenulist ul li {
+		list-style: none;
+		margin-left: 0px;
+		padding: 5px 10px;
+		font-size: 20px;
+	}
+	.header .mobilmenulist ul li:hover {
+		background: silver;
+	}
+	.header .mobilmenulist ul li i {
+		color: #337ab7;
+	}
+	.header .mobilmenulist .mobilgece {
+		width: 40%;
+		margin: 0 auto;
+		text-align: center;
+		background: #f5f5f5;
+		border-radius: 10px;
+		border: 1px solid silver;
+	}
+	.header .mobilmenulist .mobilgece .gecemodu {
+		width: 99px;
+		margin: 0 auto;
+	}
+	.header .mobilmenulist .mobilgece p {
+		font-size: 11px;
+	}
+	.pencereler .mobilozeller {
+		display: none;
+	}
+	.mobilkapat {
+		display: block;
+		font-size: 11px;
+		width: 100%;
+		text-align: center;
+		border-bottom: 1px solid #eaeaea;
+		font-weight: bold;
+		background: var(--kenarrenk);
+		color: var(--arkaplan);
+	}
+	.header .mobilmenu .mobilractive {
+		background: #eaeaec;
+		color: rgb(29 30 44);
+	}
+	.header .mobilmenu .mobiloactive {
+		background: #eaeaec;
+		color: rgb(29 30 44);
+	}
+	.header .mobilmenu .mobilkactive {
+		background: #eaeaec;
+		color: rgb(29 30 44);
+	}
+	.header .mobilmenu .mobilactive {
+		background: #eaeaec;
+		color: rgb(29 30 44);
+	}
+	.pencereler {
+		position: fixed;
+		background: #cfcfd1;
+		top: 50px;
+		width: 100%;
+		height: auto;
+		border:none;
+		padding: 0;
+		overflow: unset;
+		font-family: 'Poppins', sans-serif;
+		border-bottom: 1px solid silver;
+		z-index: 2;
+	}
+	.pencereler .kanallar {
+		display: flex;
+		flex-wrap: wrap;
+		max-height: 80px;
+		overflow: auto;
+	}
+	.pencereler .kanallar .kanal {
+		display: flex;
+		align-items: center;
+		margin: 0;
+		padding: 3px 4px;
+		border: 1px solid #ccc;
+	}
+	.pencereler .kanallar .kanal .kanalname {
+		margin-right: 5px;
+		width: calc(100% - 0px);
+		padding: 0;
+		font-size: 12px;
+	}
+	.pencereler .kanallar .kanal .kapat {
+		display: block;
+		padding-left: 5px;
+		padding-right: 5px;
+		cursor: pointer;
+	}
+	.pencereler .ozeller {
+		display: none;
+		position: fixed;
+		top: 50px;
+		right: 0;
+		width: 140px;
+		height: 100%;
+		background: #eaeaec;
+		border-left: 1px solid silver;
+		z-index: 1;
+		padding: 5px 10px;
+		overflow-y: auto;
+	}
+	.pencereler .ozeller .ozel {
+		font-size: 10px;
+		margin: 3px 0px;
+	}
+	.pencereler .ozeller .ozel .ozelname {
+		width: calc(100% - 20px);
+		overflow: hidden;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+		padding: 5px 0;
+	}
+	.pencereler .ozeller .ozel .kapat {
+		display: block;
+		padding: 5px 10px;
+		margin-right: -7px;
+		cursor: pointer;
+	}
+	.nickler {
+		display: none;
+		position: fixed;
+		top: 70px;
+		right: -15px;
+		width: 110px;
+		border-left: 1px solid silver;
+		z-index: 2;
+	}
+	.nickler .mobilkanalinc {
+display: block;
+    position: absolute;
+    background: rgb(74 151 180);
+    color: #efefef;
+    z-index: 8;
+    right: 115px;
+    top: 45%;
+    border-radius: 5px;
+    padding: 0px 5px;
+    width: 40px;
+	}
+	.nickler .mobilkanalinc i {
+		font-size: 15px;
+	}
+	.nickler .mobilkanalinc span {
+		font-size: 11px;
+	}
+	.nickler .kenarakaydir {
+		display: block;
+		position: absolute;
+		background: #4a97b4;
+		z-index: 8;
+		right: 110px;
+		top: 50%;
+		font-size: 11px;
+		width: 60px;
+		text-align: center;
+		border-radius: 5px;
+	}
+	.nickler .nicktara {
+position: relative;
+    top: 0;
+    right: 0;
+    width: 100px;
+    background: #ffffff;
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    height: auto;
+    color: rgb(0 0 0);
+    padding: 0 5px;
+    border-bottom: 1px solid silver;
+	}
+	.nickler .nicktara input[type="text"] {
+		font-size: 10px;
+	}
+	.nickler ul {
+		background: #fff;
+		top: 0px;
+	}
+	.nickler ul .nick {
+		display: flex;
+		align-items: center;
+		margin: 0px 5px;
+		position: relative;
+		color: var(--user);
+		font-size: 11px;
+	}
+	.nickler ul .nick .arkaplan {
+		width: 20px;
+		height: 20px;
+	}
+	.msg {
+		position: fixed;
+		background: #fff;
+		font-size: 11px;
+		z-index: 1;
+	}
+	.msg .msglogo {
+		display: none;
+	}
+	.msg .topicmsg, .msg .topicupdate, .msg .mode, .msg .newnick, .msg .kick.msg .seslenme {
+	}
+	.msg .kullanicimenu {
+		display: none;
+		position: fixed;
+		top: 30%;
+		right: 8px;
+		z-index: 2;
+	}
+	.msg .kullaniciackapat {
+		display: block;
+	}
+	.msg .kullanicimenu {
+		display: none;
+	}
+	.msg .yazanlar {
+		bottom: 40px;
+		right: 100px;
+	}
+	.sagbar .okapatbutton {
+		display: none;
+	}
+	.editor {
+		position: fixed;
+		height: 35px;
+		z-index: 2;
+		background: aliceblue;
+		border-top: 1px solid silver;
+	}
+	.editor .renklist {
+		display: none;
+		position: absolute;
+		list-style: none;
+		padding: 0px;
+		bottom: 30px;
+		left: 5px;
+	}
+	.editor .mobileditor {
+		display: none;
+		position: absolute;
+		bottom: 36px;
+		width: 50px;
+		background: var(--kenarrenk);
+		height: auto;
+		color: var(--arkaplan);
+		border-radius: 10px;
+	}
+	.editor .mobileditor li {
+		list-style: none;
+		padding: 5px 10px;
+		border-radius: 30px;
+		margin-left: -45px;
+		margin-top: 5px;
+		font-size: 20px;
+		text-align: center;
+		cursor: pointer;
+	}
+	.editor .mobileditor li .tema5 {
+		background: var(--renk5body);
+		padding: 5px 10px;
+		border-radius: 30px;
+		color: white;
+	}
+	.editor .mobileditor li .tema4 {
+		background: var(--renk4body);
+		padding: 5px 10px;
+		border-radius: 30px;
+		color: white;
+	}
+	.editor .mobileditor li .tema3 {
+		background: var(--renk3body);
+		padding: 5px 10px;
+		border-radius: 30px;
+		color: white;
+	}
+	.editor .mobileditor li .tema2 {
+		background: var(--renk2body);
+		padding: 5px 10px;
+		border-radius: 30px;
+		color: white;
+	}
+	.editor .mobileditor li .tema1 {
+		padding: 5px 10px;
+		border-radius: 30px;
+		background: var(--kenarrenk);
+		color: var(--mobilarkaplan);
+	}
+	.editor .mobileditor li .yazibuyutmobil {
+		padding: 5px 10px;
+		border-radius: 30px;
+		color: white;
+	}
+	.editor .mobileditor li .yazikucultmobil {
+		padding: 5px 10px;
+		border-radius: 30px;
+		color: white;
+	}
+	.editor .mobileditor li .kalinyazimobil {
+		border-radius: 30px;
+		padding: 5px 12px;
+		margin: 3px;
+		color: white;
+	}
+	.editor .mobileditor li .altyazimobil {
+		border-radius: 30px;
+		padding: 5px 12px;
+		margin: 3px;
+		color: white;
+	}
+	.editor .mobileditor .yaktivemobil {
+		border: 2px solid var(--mobilarkaplan);
+
+	}
+	.editor .co-ust {
+		display: none;
+	}
+	.renk2 .header {
+		color: var(--mobilarkaplan);
+	}
+	.renk3 .header {
+		color: var(--mobilarkaplan);
+	}
+	.renk4 .header {
+		color: var(--mobilarkaplan);
+	}
+	.renk5 .header {
+		color: var(--mobilarkaplan);
+	}
+	.temaaktif::before {
+		content: "\f00c";
+		font-family: 'FontAwesome';
+		font-size: 20px;
+		color: white;
+		margin: 0;
+		margin-top: 29px;
+		position: unset;
+		transition: unset;
+	}
+	.editor .co-alt .co-auto:nth-child(1) {
+		display: block;
+		width: 10%;
+		font-size: 16px;
+		text-align: center;
+		border-right: 1px solid silver;
+	}
+	.editor .co-alt .co-auto:nth-child(2) {
+		display: block;
+		text-align: center;
+		width: 13%;
+		border-right: 1px solid silver;
+	}
+	.editor .co-alt .co-auto:nth-child(3) {
+		width: 60%;
+	}
+	.editor .co-alt .co-auto:nth-child(4) {
+		width: 17%;
+	}
+	.editor #inputgonder {
+		padding: 11px 5px;
+		border: none;
+		background: #4a97b4;
+		color: var(--arkaplan);
+		font-size: 11px;
+		margin: 0;
+	}
+	.msg .kanal .text .emojione {
+		width: 15px;
+		position: relative;
+		top: 2px;
+		margin: 0 2px;
+	}
+	.emojionearea.emojionearea-inline>.emojionearea-editor {
+		padding: 5px 0px !important;
+		font-size: 15px !important;
+		height: 100% !important;
+	}
+	.emojionearea.emojionearea-inline {
+		border: none !important;
+		height: 35px !important;
+		box-shadow: none !important;
+	}
+	.emojionearea.emojionearea-inline>.emojionearea-button {
+		top: 5px !important;
+	}
+	.context-menu {
+		position: fixed;
+		top: 10px;
+		right: 100px;
+		background-color: var(--kenarrenk);
+		color: var(--arkaplan);
+		border: 1px solid #ccc;
+		border-radius: 5px;
+		padding: 5px;
+		display: none;
+		width: 140px;
+		z-index: 2;
+	}
+	.context-menu .clickrumuz {
+		margin: 0;
+	}
+	.jconfirm .jconfirm-box-container.jconfirm-no-transition {
+		-webkit-transition: none!important;
+		transition: none!important;
+		width: 100%;
+	}
+}

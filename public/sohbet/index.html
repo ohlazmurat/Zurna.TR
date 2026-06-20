@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="referrer" content="origin-when-crossorigin">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <base target="_blank">
+  <link href="css/emojionearea.min.css" rel="stylesheet" type="text/css"/>
+  <link rel="stylesheet" href="css/iziToast.min.css">
+  <link rel="stylesheet" href="css/jquery-confirm.min.css">
+  <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+  <audio id="radyo" preload="none" style="display: none;" controls></audio>
+  <div class="acilis">
+    <div class="baglanti">
+      <div class="baslik">
+
+      </div>
+      <div class="bilgiler">
+        <p class="basliktitle">Hoşgeldiniz</p>
+        <p class="acilistitle">Sohbet Odalarına Giriş Yapın</p>
+        <div>
+          <span><i class="fa-solid fa-user"></i></span>
+          <input type="text" id="formrumuz" placeholder="Rumuzunuz">
+        </div>
+        <div>
+         <span><i class="fa-solid fa-lock"></i></span>
+         <input type="password" id="formpassword" placeholder="Varsa Şifreniz">
+       </div>
+       <button id="formgiris">Bağlan</button>
+       <a href="" id="farklisurum"><button>Farklı sürüm ile Bağlan</button></a>
+     </div>
+   </div>
+ </div>
+ <div class="header">
+  <div class="mobilmenulist">
+    <ul>
+      <li class="mobilgece"> 
+        <p>Gündüz/Gece Modu</p>
+        <div class="gecemodu">
+         <div class="cc_control_button">
+          <label for="mar" class="checkbox-label">
+            <input class="checkbox" id="mar" type="checkbox" />
+            <span class="options">
+              <span class="decline"><i class="fa-solid fa-sun"></i>
+              </span>
+              <span class="accept"><i class="fa-solid fa-moon"></i>
+              </span>
+            </span>
+          </label>
+        </div>
+      </div>
+    </li>
+    <li class="ayarlar">  <i class="fa-solid fa-gear"></i>Ayarlar</li>
+    <li class="kanalgir"><i class="fa-solid fa-right-to-bracket"></i> Kanala Gir</li>
+    <li class="nickdegistir"><i class="fa-solid fa-right-left"></i> Nick Değiştir</li>
+    <li class="nickkayit"><i class="fa-solid fa-floppy-disk"></i> Nick Kayıt Et</li>
+    <li class="opergir"><i class="fa-brands fa-fedora"></i> Oper Gir</li>
+    <li class="hakkimizda"><i class="fa-solid fa-triangle-exclamation"></i> Hakkımızda</li>
+  </ul>
+</div>
+<div class="mobilmenu">
+  <div class="mobilradyo">
+    <span class="radyo"> <i class="fa-solid fa-radio"></i></span> <p class="radyodurum">Radyo</p>
+  </div>
+  <div class="mobilkanallar mobilkactive" onclick="mobilkanallarac()">
+    <span class="okanallar"> Kanallar <i class="fa-solid fa-eject"></i> </span>
+  </div>
+  <div class="mobilozel">
+    <span class="okapatbutton"> <i class="fa-solid fa-lock-open"></i></span>
+  </div>
+  <div class="mobilmesaj"  onclick="mobilmesajac()">
+    <i class="fa-solid fa-message"></i> <span class="ozelmesajlar">Mesajlar</span>
+  </div>
+  <div class="mobilbars" onclick="mobilbarsac()">
+    <i class="fa-solid fa-bars"></i>
+  </div>
+</div>
+<div class="header-row qbi-auto aktifekran">
+  <span id="aktifekran"></span>
+</div>
+<div class="header-row qbi-auto">
+  <div class="gecemodu">
+   <div class="cc_control_button">
+    <label for="mobilmar" class="checkbox-label">
+      <input class="checkbox" id="mobilmar" type="checkbox" />
+      <span class="options">
+        <span class="decline"><i class="fa-solid fa-sun"></i>
+        </span>
+        <span class="accept"><i class="fa-solid fa-moon"></i>
+        </span>
+      </span>
+    </label>
+  </div>
+</div>
+</div>
+<div class="header-row qbi-auto aktifnick">
+ <span>Merhaba <b id="aktifnick"></b></span>
+</div>
+<div class="header-row qbi-auto">
+  <span><button class="head kanalgir"><i class="fa-solid fa-right-to-bracket"></i> Kanala Gir</button></span>
+  <span><button class="head nickdegistir"><i class="fa-solid fa-right-left"></i> Nick Değiştir</button></span>
+  <span><button class="head nickkayit"><i class="fa-solid fa-floppy-disk"></i> Nick Kayıt Et</button></span>
+  <span> <button class="head opergir"><i class="fa-brands fa-fedora"></i> Oper Gir</button></span>
+  <span> <button class="head ayarlar"><i class="fa-solid fa-gears"></i> Ayarlar</button></span>
+  <span><button class="head hakkimizda"><i class="fa-solid fa-triangle-exclamation"></i> Hakkımızda</button></span>
+</div>
+</div>
+<div class="nickler">
+  <div class="mobilkanalinc">
+    <i class="fa-solid fa-users"></i> <span></span>
+  </div>
+  <div class="kenarakaydir">
+    <span>Gizle</span>
+  </div>
+  <div class="nicktara">
+    <span><i class="fa-solid fa-magnifying-glass"></i></span>
+    <input type="text" id="nickara" placeholder="Kullanıcı Ara" autocomplete="off">
+  </div>
+</div>
+<div class="pencereler">
+  <div class="kanallar">
+
+  </div>
+  <div class="ozeller">
+    <div class="mobilkapat"><span class="ozellerikapat">Hepsini kapat <i class="fa-regular fa-circle-xmark"></i></span></div>
+  </div>
+</div>
+<div class="msg">
+  <img src="images/logo.png" alt="" class="msglogo">
+  <div class="kullanicimenu">
+    <p class="kullaniciackapat"><i class="fa-solid fa-right-left"></i></p>
+    <ul>
+      <li class="ozelnick"></li>
+      <li class="engelle engelozel"><i class="fa-solid fa-ban"></i> Engelle</li>
+      <li class="engellist"><i class="fa-solid fa-list"></i> Eng. List</li>
+      <li class="temizle"><i class="fa-solid fa-broom"></i> Temizle</li>
+      <li class="ozelwhois"><i class="fa-solid fa-address-card"></i> Whois </li>
+      <li class="ozelkapat"><i class="fa-solid fa-ban"></i> Kapat</li>
+    </ul>
+  </div>
+  <div class="topic"></div>
+</div>
+<div class="editor"> 
+  <ul class="renklist" title="Yazı yazdıgınızda renkli yazar">
+    <li value="1" class="renk1"></li>
+    <li value="2" class="renk2"></li>
+    <li value="3" class="renk3"></li>
+    <li value="4" class="renk4"></li>
+    <li value="5" class="renk5"></li>
+    <li value="6" class="renk6"></li>
+    <li value="7" class="renk7"></li>
+    <li value="8" class="renk8"></li>
+    <li value="9" class="renk9"></li>
+    <li value="10" class="renk10"></li>
+    <li value="11" class="renk11"></li>
+    <li value="12" class="renk12"></li>
+    <li value="13" class="renk13"></li>
+    <li value="14" class="renk14"></li>
+    <li value="15" class="renk15"></li>
+  </ul>
+  <div class="mobileditor">
+    <ul>
+      <li> <span class="temizle"><i class="fa-solid fa-broom"></i></span></li>
+      <li> <span class="yazibuyutmobil"><i class="fa-solid fa-magnifying-glass-plus"></i></span></li>
+      <li> <span class="yazikucultmobil"><i class="fa-solid fa-magnifying-glass-minus"></i></span></li>
+      <li> <span class="" onclick="mobilyazirenk()"><i class="fa-solid fa-palette"></i></span></li>
+      <li> <span class="kalinyazimobil">B</span></li>
+      <li> <span class="altyazimobil">U</span></li>
+    </ul>
+  </div>
+  <div class="editor-ust co-ust">
+    <div class="kalinyazi" title="Yazı yazdıgınızda kalın yazar">B</div>
+    <div class="altyazi" title="Yazı yazdıgınızda altı cizgili yazar.">U</div>
+    <div class="renkler">
+      <i class="fa-solid fa-palette"></i>
+    </div>
+    <div class="temizle" title="Ekranı Temizler"><i class="fa-solid fa-broom"></i></div>
+    <div class="mirc"><a href="" id="farklisurum2"> <i class="fa-solid fa-blog"></i>  Farklı Sürüm ile Bağlan</a></div>
+    <div class="mirc"><a href="">Türkce mIRC İndir <i class="fa-regular fa-circle-down"></i></a></div>
+    <div class="sagbar">
+     <span class="okapatbutton"> Ö.Kapat </span>
+     <span class="yazibuyut" title="Yazilarin boyutunu büyütür."><i class="fa-solid fa-magnifying-glass-plus"></i></span>
+     <span class="yazikucult" title="Yazıları boyutunu kücültür."><i class="fa-solid fa-magnifying-glass-minus"></i></span>
+     <span class="radyo"> <i class="fa-regular fa-circle-play"></i> Radyo Aç</span>
+     <span class="tamekran" title="Tam Ekran Gösterimi Sağlar">  <i class="fa-solid fa-maximize"></i></span>
+   </div>
+
+ </div>
+ <div class="editor-alt co-alt row">
+  <div class="co-auto mobileditorevent" onclick="mobilyazieventac()">
+    <i class="fa-solid fa-gear"></i>
+  </div>
+  <div class="co-auto tabbutton">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </div>
+  <div class="co-auto">
+   <input type="text" id="inputmsg">
+ </div>
+ <div class="co-auto">
+  <button id="inputgonder">GÖNDER</button>
+</div>
+</div>
+</div>
+</div>
+<div class="context-menu" id="contextMenu">
+  <p class="clickrumuz"></p>
+  <ul>
+    <li class="menu-item" value="ozel"><i class="fa-regular fa-comment"></i> Özele Git</li>
+    <li class="menu-item" value="whois"><i class="fa-solid fa-address-card"></i> Whois Çek</li>
+    <li class="menu-item engelle" value="engelle"><i class="fa-solid fa-ban"></i> Engelle</li>
+    <li class="menu-item engellist" value="engellist"><i class="fa-solid fa-table-list"></i> Eng. List</li>
+    <li class="menu-item" value="hakkimizda"><i class="fa-solid fa-triangle-exclamation"></i> Hakkımızda</li>
+  </ul>
+</div>
+<script src="js/jquery.min.js"></script>
+<script src="js/iziToast.min.js"></script>
+<script src="js/jquery-confirm.min.js"></script>
+<script src="js/kit.js"></script>
+<script src="js/socket.io.js"></script>
+<script src="js/emojionearea.min.js"></script>
+<script src="js/ayarlar.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
