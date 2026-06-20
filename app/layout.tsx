@@ -50,9 +50,9 @@ export default function RootLayout({
 
     <a href="/">
       <img
-        src="/zurna-logo-cropped.png"
-        alt="Zurna.TR"
-        className="h-14 md:h-40"
+        src="/zurna-logo.png"
+        alt="Zurna.TR - Sohbetin Yerli Uzantısı"
+        className="h-14 md:h-42"
       />
     </a>
 
