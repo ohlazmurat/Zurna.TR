@@ -48,13 +48,13 @@ export default function RootLayout({
 <header className="bg-white shadow-sm relative z-[9999]">
   <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-center md:justify-between">
 
-    <a href="/">
-      <img
-        src="/zurna-logo.png"
-        alt="Zurna.TR - Sohbetin Yerli Uzantısı"
-        className="h-16 md:h-14 mx-auto md:mx-0"
-      />
-    </a>
+   <a href="/">
+  <img
+    src="/zurna-logo.png"
+    alt="Zurna.TR - Sohbetin Yerli Uzantısı"
+    className="h-20 w-auto mx-auto md:mx-0 md:h-14"
+  />
+</a>
 
     <nav className="hidden md:flex gap-10 font-bold text-[#0a1f63]">
       <a href="/">Anasayfa</a>
