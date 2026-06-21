@@ -196,7 +196,6 @@ export default function SohbetPage() {
         </div>
 
       </section>
-```tsx
       {/* SEO İÇERİĞİ */}
 
       <section className="bg-white rounded-3xl shadow-xl p-10 mb-10">

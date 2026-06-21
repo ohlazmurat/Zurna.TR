@@ -1,28 +1,11 @@
-import Image from "next/image";
-import { supabase } from "@/lib/supabase";
 import CanliDurum from "@/components/CanliDurum";
-
-async function getPosts() {
-  console.log("URL:", process.env.NEXT_PUBLIC_SUPABASE_URL);
-
-  const { data, error, count } = await supabase
-    .from("posts")
-    .select("*", { count: "exact" });
-
-  console.log("POSTS DATA:", data);
-  console.log("POSTS COUNT:", count);
-  console.log("POSTS ERROR:", error);
-  
-
-  return data || [];
-}
+import { getLatestBlogPosts } from "@/lib/blogPosts";
 
 export default async function Home() {
-  const articles = await getPosts();
+  const articles = getLatestBlogPosts(4);
 
   return (
     <main className="min-h-screen bg-slate-100">
-      ```tsx
 {/* RADYO + MIRC */}
 <section className="max-w-6xl mx-auto px-6 py-8">
 
@@ -69,7 +52,6 @@ export default async function Home() {
   </div>
 
 </section>
-```
 
       {/* PARTNER SİTELER */}
 <section className="max-w-7xl mx-auto px-6 pb-12">
@@ -185,13 +167,13 @@ export default async function Home() {
           💬 TÜRKİYE'NİN SAMİMİ SOHBET ORTAMI
         </span>
 
-        <h2 className="text-4xl md:text-5xl font-extrabold leading-tight mb-6">
+        <h1 className="text-4xl md:text-5xl font-extrabold leading-tight mb-6">
           Zurna Sohbet ile
           <span className="text-orange-400">
             {" "}Yeni Arkadaşlıklar{" "}
           </span>
           Kurun
-        </h2>
+        </h1>
 
         <p className="text-blue-100 text-lg leading-8">
           Zurna Sohbet; ücretsiz sohbet odaları, mobil sohbet, IRC sohbet sistemi
@@ -358,9 +340,9 @@ export default async function Home() {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
 
-          {articles.map((post: any) => (
+          {articles.map((post) => (
             <a
-              key={post.id}
+              key={post.slug}
               href={`/yazi/${post.slug}`}
               className="block bg-white rounded-3xl p-6 shadow-lg hover:-translate-y-1 transition"
             >
@@ -378,6 +360,10 @@ export default async function Home() {
               <p className="text-slate-600 text-sm line-clamp-3">
                 {post.excerpt}
               </p>
+
+              <div className="mt-4 text-xs text-slate-400">
+                {post.publishedAt} - {post.readingTime}
+              </div>
 
               <span className="mt-4 inline-block text-orange-500 font-semibold">
                 Devamını Oku →
