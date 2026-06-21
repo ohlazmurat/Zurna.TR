@@ -52,7 +52,7 @@ export default function RootLayout({
   <img
     src="/zurna-logo.png"
     alt="Zurna.TR - Sohbetin Yerli Uzantısı"
-    className="h-46 w-auto mx-auto md:mx-0 md:h-28"
+    className="h-52 w-auto mx-auto md:mx-0 md:h-28"
   />
 </a>
 
