@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { getBlogPosts } from "@/lib/blogPosts";
 import { cityPages } from "@/lib/cityPages";
+import { countryPages } from "@/lib/countryPages";
 import { siteUrl, sohbetPages } from "@/lib/sohbetSeoPages";
 
 const staticRoutes = [
@@ -46,5 +47,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6,
   }));
 
-  return [...staticUrls, ...seoUrls, ...blogUrls, ...cityUrls];
+  const countryUrls = countryPages.map((page) => ({
+    url: `${siteUrl}/${page.slug}`,
+    lastModified: now,
+    changeFrequency: "monthly" as const,
+    priority: 0.6,
+  }));
+
+  return [...staticUrls, ...seoUrls, ...blogUrls, ...cityUrls, ...countryUrls];
 }
